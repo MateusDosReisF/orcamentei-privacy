@@ -25,7 +25,7 @@
 <h2>1. Como o app funciona</h2>
 <p>O Orçamentei pode ser usado de duas formas:</p>
 <ul>
-  <li><strong>Sem login (modo offline):</strong> todos os dados ficam salvos apenas no seu celular. Nenhuma informação pessoal é enviada aos nossos servidores.</li>
+  <li><strong>Sem login (modo offline):</strong> todos os dados ficam salvos apenas no seu celular. Nenhuma informação pessoal é enviada aos nossos servidores. Apenas o identificador técnico de notificações (veja a seção 2) é gerado pelo serviço de notificações do Google.</li>
   <li><strong>Com login Google:</strong> os dados que você cadastra no app são sincronizados com nossos servidores para backup e acesso em outros aparelhos.</li>
 </ul>
 <p>O login é <strong>opcional</strong>: ele só é necessário para o backup na nuvem.</p>
@@ -37,9 +37,10 @@
   <tr><td>Dados profissionais</td><td>Nome da empresa, nome profissional, telefone, WhatsApp, e-mail de contato, CPF/CNPJ, endereço e cidade</td><td>Informados por você em Configurações</td></tr>
   <tr><td>Clientes</td><td>Nome, telefone, e-mail, endereço, cidade e observações dos clientes que você cadastrar</td><td>Informados por você</td></tr>
   <tr><td>Dados do negócio</td><td>Orçamentos, vendas, produtos e estoque, fichas técnicas, agendamentos, valores, formas de pagamento e observações</td><td>Informados por você</td></tr>
+  <tr><td>Identificador do dispositivo</td><td>Identificador de instalação gerado pelo Firebase Cloud Messaging (Google), usado para o envio de notificações e estatísticas de entrega delas. Coletado mesmo sem login.</td><td>Gerado automaticamente pelo app</td></tr>
 </table>
 
-<p><strong>Não coletamos:</strong> localização, contatos da agenda do celular, histórico de navegação, dados de publicidade nem relatórios de uso (analytics).</p>
+<p><strong>Não coletamos:</strong> localização, contatos da agenda do celular, histórico de navegação nem dados de publicidade.</p>
 <p><strong>Fotos:</strong> as imagens escolhidas para foto de perfil, logotipo e fichas técnicas ficam <strong>apenas no seu celular</strong> e não são enviadas aos nossos servidores. Para escolher a imagem, o app usa o seletor de fotos do próprio Android e só acessa a imagem que você selecionar.</p>
 
 <h2>3. Para que usamos os dados</h2>
@@ -54,7 +55,8 @@
 <p>Para funcionar, o app utiliza:</p>
 <ul>
   <li><strong>Google</strong> — autenticação (login com conta Google);</li>
-  <li><strong>Supabase</strong> — armazenamento dos dados na nuvem, com isolamento entre usuários (cada usuário só acessa os próprios dados).</li>
+  <li><strong>Supabase</strong> — armazenamento dos dados na nuvem, com isolamento entre usuários (cada usuário só acessa os próprios dados);</li>
+  <li><strong>Firebase Cloud Messaging (Google)</strong> — infraestrutura de notificações.</li>
 </ul>
 <p>Esses prestadores tratam os dados apenas em nosso nome, para executar o serviço.</p>
 <p>Quando você escolhe enviar um orçamento pelo <strong>WhatsApp</strong> ou compartilhar um PDF, o envio é feito por você, pelo aplicativo de sua escolha.</p>
